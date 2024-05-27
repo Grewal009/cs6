@@ -68,7 +68,7 @@ class Program
         int num = Convert.ToInt32(input);
         if (num >= 1 && num <= 7)
         {
-            switch (num)
+             /*switch (num)
             {
                 case 1:
                 {
@@ -110,7 +110,22 @@ class Program
                     Console.WriteLine("Wrong input");
                     break;
                 }
-            }
+            }*/
+             
+             //switch using expression syntax
+             string weekDay = num switch
+             {
+                 1 => "Monday",
+                 2 => "Tuesday",
+                 3 => "Wednesday",
+                 4 => "Thursday",
+                 5 => "Friday",
+                 6 => "Saturday",
+                 7 => "Sunday",
+                 _ => "Input not valid",
+             };
+             Console.WriteLine($"{num} => {weekDay}");
+
         }
         else
         {
